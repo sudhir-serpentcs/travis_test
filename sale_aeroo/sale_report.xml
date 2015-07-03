@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="sale_report_excel" model="ir.actions.report.xml">
+            <field name="name">Sale Aeroo Report</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">sale.order</field>
+            <field name="report_name">sale_report_excel</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+            <field name="parser_loc">sale_aeroo/report/sale_report.py</field>
+            <field name="report_rml">sale_aeroo/report/sale_report.ods</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_xls_odt"/>
+            <field name="context_fname">xls</field>
+        </record>
+
+        <record id="sale_report_excel_new" model="ir.actions.report.xml">
+            <field name="name">Sale Aeroo Report (Print)</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">sale.order</field>
+            <field name="report_name">sale_report_excel_new</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+<!--             <field name="parser_loc">sale_aeroo/report/sale_report.py</field> -->
+            <field name="report_rml">sale_aeroo/report/sale_report_new.ods</field>
+            <field name="parser_state">default</field>
+            <field name="tml_source">file</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_xls_odt"/>
+            <field name="context_fname">xls</field>
+        </record>
+
+        <ir_set>
+            <field eval="'action'" name="key"/>
+            <field eval="'client_print_multi'" name="key2"/>
+            <field eval="['sale.order']" name="models"/>
+            <field name="name">Sale Report</field>
+            <field eval="'ir.actions.report.xml,'+str(sale_report_excel_new)" name="value"/>
+            <field eval="True" name="isobject"/>
+            <field eval="True" name="replace"/>
+        </ir_set>
+
+        </data>
+</openerp>
