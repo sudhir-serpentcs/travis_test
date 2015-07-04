@@ -21,11 +21,11 @@ env:
 # Install tested version of odoo (official or ocb)
 # Get modules from other repos which have dependencies(here not necessary)
 install: 
-    - pip install coveralls flake8
-    - pip install http://download.gna.org/pychart/PyChart-1.39.tar.gz
-    - pip install ${ODOO}
-    - pip install ${aeroo}
-    - pip install https://launchpad.net/aeroolib/trunk/1.0.0/+download/aeroolib.tar.gz
+    - sudo pip install coveralls flake8
+    - sudo pip install http://download.gna.org/pychart/PyChart-1.39.tar.gz
+    - sudo pip install ${ODOO}
+    - sudo pip install ${aeroo}
+    - sudo pip install https://launchpad.net/aeroolib/trunk/1.0.0/+download/aeroolib.tar.gz
 
 # Create database
 # Pre-install modules and dependencies
