@@ -27,10 +27,9 @@
     'description': '''
 Sale Aeroo Report
 ''',
-    'depends': ['sale', 'report_aeroo'],
+    'depends': ['sale'],
     'data': [
         'wizard/wiz_sale_report_view.xml',
-        'sale_report.xml',
     ],
     'installable': True,
     'auto-install': False

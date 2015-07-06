@@ -13,7 +13,6 @@ env:
 #   - ODOO="https://github.com/savoirfairelinux/odoo/archive/setuptools-addons.tar.gz"  # Temp until https://github.com/odoo/odoo/pull/81 is solved
    - ODOO="https://github.com/odoo/odoo/archive/8.0.zip"
 #  - ODOO="ocb"
-   - aeroo="https://apps.odoo.com/loempia/download/report_aeroo/8.0.1.2.1/1b8WdyEvvnfNQMezKEwjMd.zip?deps"
 
 # Need coveralls for coverage reports
 # Need flake8 for pep8 testing
@@ -24,8 +23,6 @@ install:
     - sudo pip install coveralls flake8
     - sudo pip install http://download.gna.org/pychart/PyChart-1.39.tar.gz
     - sudo pip install ${ODOO}
-    - sudo pip install ${aeroo}
-    - sudo pip install https://launchpad.net/aeroolib/trunk/1.0.0/+download/aeroolib.tar.gz
 
 # Create database
 # Pre-install modules and dependencies
