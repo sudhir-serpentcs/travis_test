@@ -22,6 +22,7 @@
 
 from openerp.report import report_sxw
 
+
 class Parser(report_sxw.rml_parse):
 
     def __init__(self, cr, uid, name, context=None):
@@ -45,7 +46,6 @@ class Parser(report_sxw.rml_parse):
             lst.append(vals)
         return lst
 
-
     def get_lines(self, order_id):
         lst = []
         order = self.pool.get('sale.order').browse(self.cr, self.uid, order_id)
@@ -61,7 +61,6 @@ class Parser(report_sxw.rml_parse):
             }
             lst.append(vals)
         return lst
-
 
     def get_total(self):
         return self.total

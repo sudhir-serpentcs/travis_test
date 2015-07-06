@@ -22,10 +22,12 @@
 
 from openerp.osv import orm, fields
 
+
 class wiz_sale_report(orm.TransientModel):
     _name = 'wiz.sale.report'
     _columns = {
-        'order_ids': fields.many2many('sale.order', 'wiz_report_sale_order', 'wiz_id', 'order_id', 'Order', required=True),
+        'order_ids': fields.many2many('sale.order', 'wiz_report_sale_order', 'wiz_id',
+                                      'order_id', 'Order', required=True),
     }
 
     def print_excel(self, cr, uid, ids, context=None):
@@ -33,9 +35,9 @@ class wiz_sale_report(orm.TransientModel):
             context = {}
         data = self.read(cr, uid, ids)[0]
         datas = {
-             'ids': [],
-             'model': 'sale.order',
-             'form': data,
+            'ids': [],
+            'model': 'sale.order',
+            'form': data,
         }
         return {
             'type': 'ir.actions.report.xml',
