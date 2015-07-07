@@ -29,7 +29,8 @@ virtualenv:
 #  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
 #  - travis_install_nightly
 
-#script:
+script:
+   - flake8 . --max-line-length=120 --exclude=__init__.py
 #  - travis_run_tests
 
 #after_success:
