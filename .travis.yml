@@ -25,9 +25,9 @@ env:
 virtualenv:
   system_site_packages: true
 
-install:
-  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
-  - travis_install_nightly
+#install:
+#  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+#  - travis_install_nightly
 
 script:
   - travis_run_tests
