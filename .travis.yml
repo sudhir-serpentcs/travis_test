@@ -25,7 +25,6 @@ env:
 virtualenv:
   system_site_packages: true
 
-script: False
 no_script: True
 
 #after_success:
