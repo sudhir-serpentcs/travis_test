@@ -22,7 +22,7 @@ env:
 install: 
 #   - sudo pip install coveralls flake8
 #    - sudo pip install http://download.gna.org/pychart/PyChart-1.39.tar.gz
-    - sudo pip install ${ODOO}
+#    - sudo pip install ${ODOO}
 
 # Create database
 # Pre-install modules and dependencies
