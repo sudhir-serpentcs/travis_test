@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2012-Today Serpent Consulting Services Pvt. Ltd. (<http://www.serpentcs.com>)
+#    Copyright (C) 2012-Today Serpent Consulting Services Pvt. Ltd.
+#    (<http://www.serpentcs.com>)
 #    Copyright (C) 2004 OpenERP SA (<http://www.openerp.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -36,7 +37,8 @@ class Parser(report_sxw.rml_parse):
 
     def get_data(self, form):
         lst = []
-        for order in self.pool.get('sale.order').browse(self.cr, self.uid, form['order_ids']):
+        for order in self.pool.get('sale.order').browse(self.cr, self.uid,
+                                                        form['order_ids']):
             vals = {
                 'number': order.name,
                 'customer': order.partner_id.name,

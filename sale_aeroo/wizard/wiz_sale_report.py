@@ -2,7 +2,8 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2012-Today Serpent Consulting Services Pvt. Ltd. (<http://www.serpentcs.com>)
+#    Copyright (C) 2012-Today Serpent Consulting Services Pvt. Ltd.
+#    (<http://www.serpentcs.com>)
 #    Copyright (C) 2004 OpenERP SA (<http://www.openerp.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,8 +27,8 @@ from openerp.osv import orm, fields
 class wiz_sale_report(orm.TransientModel):
     _name = 'wiz.sale.report'
     _columns = {
-        'order_ids': fields.many2many('sale.order', 'wiz_report_sale_order', 'wiz_id',
-                                      'order_id', 'Order', required=True),
+        'order_ids': fields.many2many('sale.order', 'wiz_report_sale_order',
+                                      'wiz_id', 'order_id', 'Order', required=True),
     }
 
     def print_excel(self, cr, uid, ids, context=None):

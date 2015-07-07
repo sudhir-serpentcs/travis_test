@@ -3,11 +3,12 @@
 language: python
 
 python:
-#  - "pypy" # not supported by odoo 8
-#  - "3.4"  # not supported by odoo 8
-#  - "3.3"  # not supported by odoo 8
   - "2.7"
-#  - "2.6"  # not supported by odoo 8
+
+addons:
+  apt:
+    packages:
+      - python-lxml  # because pip installation is slow
 
 env:
   global:
@@ -22,7 +23,6 @@ virtualenv:
   system_site_packages: true
 
 install:
-  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 
