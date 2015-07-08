@@ -1,17 +1,15 @@
-# Config file .travis.yml
-
 language: python
 
 python:
   - "2.7"
 
-sudo: 
-  required
-
 addons:
   apt:
     packages:
+      - expect-dev  # provides unbuffer utility
       - python-lxml  # because pip installation is slow
+      - python-simplejson
+      - python-serial
 
 env:
   global:
@@ -21,12 +19,24 @@ env:
   - LINT_CHECK="1"
   - TRANSIFEX="0"
   - TESTS="1" ODOO_REPO="odoo/odoo"
+  - TESTS="1" ODOO_REPO="OCA/OCB"
+# either use the two lines above or the two below. Don't change the default if
+# it's not necessary (it is only necessary if modules in your repository can't
+# be installed in the same database. And you get a huge speed penalty in your
+# tests)
+#  - TESTS="1.0" ODOO_REPO="odoo/odoo" UNIT_TEST="1"
+#  - TESTS="1.0" ODOO_REPO="OCA/OCB" UNIT_TEST="1"
 
 virtualenv:
   system_site_packages: true
 
-no_script: True
+install:
+  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+  - travis_install_nightly
 
-#after_success:
-#  - travis_after_tests_success
+script:
+  - travis_run_tests
 
+after_success:
+  - travis_after_tests_success
