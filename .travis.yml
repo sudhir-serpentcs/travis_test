@@ -11,6 +11,8 @@ addons:
       - python-simplejson
       - python-serial
 
+sudo: True
+
 env:
   global:
   - VERSION="8.0" ODOO_REPO="odoo/odoo" UNIT_TEST="0" TESTS="0" LINT_CHECK="0"
