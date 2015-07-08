@@ -28,7 +28,8 @@ class wiz_sale_report(orm.TransientModel):
     _name = 'wiz.sale.report'
     _columns = {
         'order_ids': fields.many2many('sale.order', 'wiz_report_sale_order',
-                                      'wiz_id', 'order_id', 'Order', required=True),
+                                      'wiz_id', 'order_id', 'Order',
+                                      required=True),
     }
 
     def print_excel(self, cr, uid, ids, context=None):
